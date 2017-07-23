@@ -43,6 +43,22 @@ void insertAtEnd(struct node **head, int data){
 }
 
 void insertAt(struct node **head, int data,  int location){
+	struct node *new  = (struct node *)malloc(sizeof(struct node));
+	if (*head == NULL){
+		printf("Empty LinkedList");
+		return;
+	}
+	else{
+		new->data = data;
+		int count = 1;
+		struct node *prev = *head;
+		while(count<location-1 && prev != NULL){
+			prev =  prev->next;
+			count++;
+		}
+		new->next = prev->next;
+		prev->next = new;
+	}
 
 }
 
@@ -70,8 +86,10 @@ void main(int argc, char *args[]){
 	// Add Node at end
 	insertAtEnd(&head, 4);
 	printf("After inserting at End\n");
+	printlist(head);
 	// Add Node at given Location
-	//insertAt(&head, 4, 3);
+	insertAt(&head, 5, 3);
+	printf("Adding at given location\n");
 	printlist(head);
 	return;
 }
