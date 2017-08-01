@@ -1,18 +1,23 @@
 #include<stdio.h>
 #include<stdlib.h>
-# define Max 15
+#define Max 15
 
 int queue[Max];
 int front = 0;
 int rear = -1;
 
 int isEmpty(){
-
+	if()
 }
 
 int isFull(){
-	
-
+	if (rear == Max -1){
+		printf("Queue is Full\n");
+		return 1;
+	}
+	else{
+		return 0;
+	}
 }
 
 void enqueue(int data){
