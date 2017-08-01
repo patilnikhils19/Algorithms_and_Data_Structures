@@ -25,6 +25,14 @@ int isFull(){
 	}
 }
 
+int peek(){
+	if (isEmpty() == 1){
+		printf("No data\n");
+	}
+	else{
+		return queue[front];
+	}
+}
 void enqueue(int data){
 	if(isFull() == 1){
 		printf("Queue is full\n");
@@ -61,6 +69,7 @@ void main(int argc, char* args[]){
 	printf("Dequeued data is : %d \n", dequeue());
 	printf("Dequeued data is : %d \n", dequeue());
 	printf("Dequeued data is : %d \n", dequeue());
+	printf("Peek fetch is :  %d\n", peek());
 	printf("Dequeued data is : %d \n", dequeue());
 	printf("Dequeued data is : %d \n", dequeue());
 	printf("Dequeued data is : %d \n", dequeue());
