@@ -7,7 +7,12 @@ int front = 0;
 int rear = -1;
 
 int isEmpty(){
-	if()
+	if(rear == -1 || rear < front){
+		return 1;
+	}
+	else{
+		return 0;
+	}
 }
 
 int isFull(){
@@ -21,23 +26,26 @@ int isFull(){
 }
 
 void enqueue(int data){
-	if(isFull == 1){
+	if(isFull() == 1){
 		printf("Queue is full\n");
 	}
 	else{
-		queue[front] = data;
-		rear = rear+1;
+		rear =  rear +1;
+		queue[rear] = data;
 	}
 }
 
 int dequeue(){
-	if(isEmpty == 1){
+	if(isEmpty() == 1){
 		printf("Empty Queue \n");
 		return -1;
 	}
 	else{
 		int d = queue[front];
-		front = front+1;
+		front = front +1;
+		if (front == Max){
+			front = 0;
+		}
 		return d;
 	}
 
@@ -50,6 +58,10 @@ void main(int argc, char* args[]){
 	enqueue(3);
 	enqueue(4);
 	enqueue(5);
-	printf("data is : %d \n", dequeue());
-
+	printf("Dequeued data is : %d \n", dequeue());
+	printf("Dequeued data is : %d \n", dequeue());
+	printf("Dequeued data is : %d \n", dequeue());
+	printf("Dequeued data is : %d \n", dequeue());
+	printf("Dequeued data is : %d \n", dequeue());
+	printf("Dequeued data is : %d \n", dequeue());
 }
