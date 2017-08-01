@@ -1,0 +1,3 @@
+Create Queue data structure
+write, a isEmpty, isFull, enqueue, dequeue, peek methods for Queue implementation.
+
